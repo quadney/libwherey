@@ -4,12 +4,13 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4' # rails-api has some incompatibilities with 4.2
 gem 'rails-api', '~> 0.3.1'
 
-gem 'spring', :group => :development
-
 # For versioning our API we will use:
 gem 'api-versions', '~> 1.2.0'
 
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3',     '1.3.9'
+  gem 'spring',      '1.1.3'
+end
 
 # To use Jbuilder templates for JSON
 gem 'jbuilder', '~> 2.1.3'
@@ -31,3 +32,8 @@ gem 'jbuilder_cache_multi', '~> 0.0.2'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'active_model_serializers'
+
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
+end
