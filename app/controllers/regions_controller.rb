@@ -54,6 +54,6 @@ class RegionsController < ApplicationController
     end
 
     def region_params
-      params.require(:region).permit(:identifier, :latitude, :longitude, :current_population, :total_capacity)
+      params.require(:region).permit(:identifier, :latitude, :longitude, :current_population, :total_capacity, :university_id)
     end
 end
