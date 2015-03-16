@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :regions, except: [:new, :edit]
-  resources :universities, except: [:new, :edit]
+  
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      # Our resources will go here.
+      resources :regions, except: [:new, :edit]
+      resources :universities, except: [:new, :edit]
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
