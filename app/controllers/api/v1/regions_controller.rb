@@ -49,6 +49,27 @@ module Api
         head :no_content
       end
 
+        # not sure where this should go - controller or model? I think model
+      def user_entered_region
+        # find the region
+        region = Region.find(params[:id])
+        # add 1 to the current population
+        region.update(:current_population => region.current_population + 1)
+        region.save
+
+        render json: region
+      end
+
+      def user_exited_region
+        # find the region
+        region = Region.find(params[:id])
+        # add 1 to the current population
+        region.update(:current_population => region.current_population - 1)
+        region.save
+
+        render json: region
+      end
+        
       private
 
         def set_region
