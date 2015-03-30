@@ -6,7 +6,7 @@ module Api
       # GET /regions
       # GET /regions.json
       def index
-        @regions = Region.all
+        @regions = Region.find(params[:university_id])
 
         render json: @regions
       end
