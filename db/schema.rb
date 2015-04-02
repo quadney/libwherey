@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402171810) do
+ActiveRecord::Schema.define(version: 20150402172724) do
 
   create_table "regions", force: true do |t|
     t.string   "identifier",         limit: nil
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(version: 20150402171810) do
     t.datetime "updated_at",             null: false
     t.float    "latitude"
     t.float    "longitude"
+  end
+
+  create_table "zones", force: true do |t|
+    t.string   "identifier"
+    t.integer  "region_id"
+    t.float    "gps_altitude"
+    t.string   "wifi_identity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
