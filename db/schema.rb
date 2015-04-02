@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150402172724) do
+ActiveRecord::Schema.define(version: 20150402174202) do
 
   create_table "regions", force: true do |t|
     t.string   "identifier",         limit: nil
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20150402172724) do
     t.string   "wifi_identity"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "current_population"
+    t.integer  "max_capacity"
   end
 
 end
