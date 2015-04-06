@@ -1,7 +1,7 @@
 module Api
   module V1
     class ZonesController < ApplicationController
-      before_action :set_region, only: [:show, :update, :destroy]
+      before_action :set_zone, only: [:show, :update, :destroy]
 
       # GET /zones
       # GET /zones.json
@@ -20,7 +20,7 @@ module Api
       # POST /regions
       # POST /regions.json
       def create
-        @zone = Zonw.new(zone_params)
+        @zone = Zone.new(zone_params)
 
         if @zone.save
           render json: @zone, status: :created, location: @zone
@@ -77,7 +77,7 @@ module Api
         end
 
         def zone_params
-          params.require(:zone).permit(:identifier, :region_id, :gps_altitude, :wifi_identity, :current_population, :max_capacity)
+          params.require(:zone).permit(:identifier, :region_id, :gps_altitude, :current_population, :max_capacity)
         end
     end
   end
