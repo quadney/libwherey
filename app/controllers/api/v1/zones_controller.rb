@@ -14,14 +14,7 @@ module Api
       # GET /zones/1
       # GET /zones/1.json
       def show
-        bssids = Bssid.where(zone_id: params[:id])
-
-        zone = @zone.as_json
-        puts zone
-        zone["bssids"] = bssids.as_json
-        puts zone
-
-        render json: zone
+        render json: @zone
       end
 
       # POST /regions
