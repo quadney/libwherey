@@ -3,6 +3,6 @@ class Region < ActiveRecord::Base
 	has_many :zones
 
 	def as_json(options={})
-		super(include: :zones)
+		super(:include => [:zones => { :include => :bssids}])
 	end
 end
