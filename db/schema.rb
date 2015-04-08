@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406150547) do
+ActiveRecord::Schema.define(version: 20150408214821) do
 
   create_table "bssids", force: true do |t|
     t.string   "identifier"
@@ -21,13 +21,11 @@ ActiveRecord::Schema.define(version: 20150406150547) do
   end
 
   create_table "regions", force: true do |t|
-    t.string   "identifier",         limit: nil
+    t.string   "identifier"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "current_population"
-    t.integer  "total_capacity"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "university_id"
   end
 
@@ -42,7 +40,6 @@ ActiveRecord::Schema.define(version: 20150406150547) do
   create_table "zones", force: true do |t|
     t.string   "identifier"
     t.integer  "region_id"
-    t.float    "gps_altitude"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "current_population"
