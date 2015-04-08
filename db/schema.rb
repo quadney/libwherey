@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150407014520) do
+ActiveRecord::Schema.define(version: 20150408214821) do
 
   create_table "bssids", force: true do |t|
     t.string   "identifier"
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20150407014520) do
   create_table "zones", force: true do |t|
     t.string   "identifier"
     t.integer  "region_id"
-    t.float    "gps_altitude"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "current_population"
