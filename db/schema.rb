@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408214821) do
+ActiveRecord::Schema.define(version: 20150411202301) do
 
   create_table "bssids", force: true do |t|
     t.string   "identifier"
@@ -30,11 +30,12 @@ ActiveRecord::Schema.define(version: 20150408214821) do
   end
 
   create_table "universities", force: true do |t|
-    t.string   "name",       limit: nil
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "name",             limit: nil
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "common_wifi_name"
   end
 
   create_table "zones", force: true do |t|
